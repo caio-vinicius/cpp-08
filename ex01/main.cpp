@@ -13,8 +13,8 @@ void spanSubject() {
     sp.addNumber(17);
     sp.addNumber(9);
     sp.addNumber(11);
-    std::cout << *sp.shortestSpan() << std::endl;
-    std::cout << *sp.longestSpan() << std::endl;
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
 }
 
 void span() {
@@ -29,13 +29,13 @@ void span() {
         span.addNumber(52);
         span.addNumber(42);
 
-        std::vector<int>::iterator i;
+        int i;
 
         i = span.shortestSpan();
-        std::cout << *i << std::endl;
+        std::cout << "shortest span: " << i << std::endl;
 
         i = span.longestSpan();
-        std::cout << *i << std::endl;
+        std::cout << "longest span: " << i << std::endl;
     }
     std::cout << "TEST 2 =========" << std::endl;
     {
@@ -73,11 +73,12 @@ void span() {
         }
         std::cout << std::endl;
 
-        i = span.shortestSpan();
-        std::cout << *i << std::endl;
+        int j;
+        j = span.shortestSpan();
+        std::cout << "shortest span: " << j << std::endl;
 
-        i = span.longestSpan();
-        std::cout << *i << std::endl;
+        j = span.longestSpan();
+        std::cout << "longest span: " << j << std::endl;
     }
     std::cout << "TEST 3 =========" << std::endl;
     {

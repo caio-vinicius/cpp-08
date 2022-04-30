@@ -16,8 +16,8 @@ class Span {
     Span(unsigned int n);
     void addNumber(unsigned int n);
     std::vector<int> getNumbers(void);
-    std::vector<int>::iterator shortestSpan(void);
-    std::vector<int>::iterator longestSpan(void);
+    int shortestSpan(void);
+    int longestSpan(void);
     void addNumberRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
  private:
     const unsigned int max_numbers;

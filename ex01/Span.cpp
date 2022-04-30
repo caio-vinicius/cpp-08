@@ -31,16 +31,24 @@ std::vector<int> Span::getNumbers(void) {
     return (Span::numbers);
 }
 
-std::vector<int>::iterator Span::shortestSpan(void) {
+int Span::shortestSpan(void) {
     if (Span::numbers.size() <= 1)
         throw std::length_error("Length of numbers stored are to low.");
-    return (Span::numbers.begin());
+    std::vector<int> difference;
+    for (unsigned int i = 0; i < Span::numbers.size() - 1; i++) {
+        difference.push_back(Span::numbers[i + 1] - Span::numbers[i]);
+    }
+    return (*(std::min_element(difference.begin(), difference.end())));
 }
 
-std::vector<int>::iterator Span::longestSpan(void) {
+int Span::longestSpan(void) {
     if (Span::numbers.size() <= 1)
         throw std::length_error("Length of numbers stored are to low.");
-    return (Span::numbers.end() - 1);
+    std::vector<int> difference;
+    for (unsigned int i = 0; i < Span::numbers.size() - 1; i++) {
+        difference.push_back(Span::numbers[i + 1] - Span::numbers[i]);
+    }
+    return (*(std::max_element(difference.begin(), difference.end())));
 }
 
 void Span::addNumberRange(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
